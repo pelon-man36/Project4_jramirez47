@@ -46,12 +46,11 @@ class SpaceStation(CapsuleCollidableObject):
     def __init__(self, loader: Loader, modelPath: str, parentNode: NodePath, nodeName: str,
         posVec: Vec3, scaleVec: float):
         super(SpaceStation, self).__init__(loader, modelPath, parentNode, nodeName, 1, -1, 5, 1, -1, -5, 10)
-        self.modelNode = loader.loadModel(modelPath)
-        self.modelNode.reparentTo(parentNode)
+        #self.modelNode = loader.loadModel(modelPath)
+        #self.modelNode.reparentTo(parentNode)
         self.modelNode.setPos(posVec)
         self.modelNode.setScale(scaleVec)
-
-        self.modelNode.setName(nodeName)
+        #self.modelNode.setName(nodeName)
 
 class Drone(ShowBase):
     droneCount = 0

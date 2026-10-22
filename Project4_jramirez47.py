@@ -30,12 +30,7 @@ class MyApp(ShowBase):
         self.cTrav = CollisionTraverser()
         self.cTrav.traverse(self.render)
         self.pusher = CollisionHandlerPusher()
-        collideObjectBase.PlacedObject(self.loader, "./Assets/Space_Station/SpaceStation1B/spaceStation.egg",
-            self.render, "SpaceStation")
-        collideObjectBase.CollidableObject(self.loader, "./Assets/Space_Station/SpaceStation1B/spaceStation.egg",
-            self.render, "SpaceStation")
-        collideObjectBase.CapsuleCollidableObject(self.loader, "./Assets/Space_Station/SpaceStation1B/spaceStation.egg",
-            self.render, "SpaceStation", 1, -1, 5, 1, -1, -5, 10)
+    
         #self.pusher.addCollider(self.Player.collisionNode, self.Player.modelNode)
         #self.cTrav.addCollider(self.Player.collisionNode, self.pusher)
         #self.showCollisions()
