@@ -16,6 +16,9 @@ class Player(SphereCollideObject):
         self.modelNode.setName(nodeName)
         tex = loader.loadTexture(texPath)
         self.modelNode.setTexture(tex, 1)
+        self.render = parentNode
+
+        self.setKeyBindings()
 
     def Upwards(self, keyDown):
         if keyDown:
@@ -67,48 +70,48 @@ class Player(SphereCollideObject):
     
     def MoveUpwards(self, task):
         rate = .5
-        self.Player.modelNode.setP(self.Player.modelNode.getP() - rate)
+        self.modelNode.setP(self.modelNode.getP() - rate)
         return task.cont
 
     def MoveDownwards(self, task):
         rate = .5
-        self.Player.modelNode.setP(self.Player.modelNode.getP() + rate)
+        self.modelNode.setP(self.modelNode.getP() + rate)
         return task.cont
 
     def MoveForward(self, task):
         speed = 5
-        trajectory = self.render.getRelativeVector(self.Player.modelNode, Vec3.up())
+        trajectory = self.render.getRelativeVector(self.modelNode, Vec3.up())
         trajectory.normalize()
-        self.Player.modelNode.setFluidPos(self.Player.modelNode.getPos() + trajectory * speed)
+        self.modelNode.setFluidPos(self.modelNode.getPos() + trajectory * speed)
         return task.cont
 
     def MoveBackward(self, task):
         speed = 5
-        trajectory = self.render.getRelativeVector(self.Player.modelNode, Vec3.up())
+        trajectory = self.render.getRelativeVector(self.modelNode, Vec3.up())
         trajectory.normalize()
-        self.Player.modelNode.setFluidPos(self.Player.modelNode.getPos() - trajectory * speed)
+        self.modelNode.setFluidPos(self.modelNode.getPos() - trajectory * speed)
         return task.cont
 
     def MoveLeftward(self, task):
         rate = .5
-        self.Player.modelNode.setR(self.Player.modelNode.getR() + rate)
+        self.modelNode.setR(self.modelNode.getR() + rate)
         return task.cont
 
     def MoveRightward(self, task):
         rate = .5
-        self.Player.modelNode.setR(self.Player.modelNode.getR() - rate)
+        self.modelNode.setR(self.modelNode.getR() - rate)
         return task.cont
     
     def ApplyLeftTurn(self, task):
         # half a degree every frame
         rate = .5
-        self.Player.modelNode.setH(self.Player.modelNode.getH() - rate)
+        self.modelNode.setH(self.modelNode.getH() - rate)
         return task.cont
 
     def ApplyRightTurn(self, task):
         # half a degree every frame
         rate = .5
-        self.Player.modelNode.setH(self.Player.modelNode.getH() + rate)
+        self.modelNode.setH(self.modelNode.getH() + rate)
         return task.cont
     
     def setKeyBindings(self):
