@@ -31,9 +31,8 @@ class MyApp(ShowBase):
         self.cTrav.traverse(self.render)
         self.pusher = CollisionHandlerPusher()
     
-        #self.pusher.addCollider(self.Player.collisionNode, self.Player.modelNode)
-        #self.cTrav.addCollider(self.Player.collisionNode, self.pusher)
-        #self.showCollisions()
+        self.pusher.addCollider(self.Player.collisionNode, self.Player.modelNode)
+        self.cTrav.addCollider(self.Player.collisionNode, self.pusher)
         self.cTrav.showCollisions(self.render)
 
 
