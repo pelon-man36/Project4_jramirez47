@@ -1,6 +1,7 @@
 from direct.showbase.ShowBase import ShowBase
 import SpaceJamClasses as spaceJamClasses
 import DefensePaths as defensePaths
+import Player as player
 from panda3d.core import *
 from panda3d.core import CollisionTraverser, CollisionHandlerPusher
 import CollideObjectBase as collideObjectBase
@@ -37,7 +38,7 @@ class MyApp(ShowBase):
 
 
     def setScene(self):
-        self.Player = spaceJamClasses.Player(self.loader, "./Assets/Spaceships/ship.obj", self.render,
+        self.Player = player.Player(self.loader, self.taskMgr, self.accept, "./Assets/Spaceships/ship.obj", self.render,
             "Player", "./Assets/Spaceships/ship_TEX.tga", (0, 400, 0), (180, 0, 0), 5)
 
         self.Universe = spaceJamClasses.Universe(self.loader, "./Assets/Universe/Universe.x", self.render,
