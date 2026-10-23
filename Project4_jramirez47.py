@@ -5,7 +5,6 @@ import Player as player
 from panda3d.core import *
 from panda3d.core import CollisionTraverser, CollisionHandlerPusher
 import CollideObjectBase as collideObjectBase
-import sys
 
 class MyApp(ShowBase):
     def __init__(self):
@@ -25,8 +24,6 @@ class MyApp(ShowBase):
         self.circleY = defensePaths.createCircleY(self)
 
         self.setCamera()
-        #self.setKeyBindings()
-
 
         self.cTrav = CollisionTraverser()
         self.cTrav.traverse(self.render)

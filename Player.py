@@ -3,6 +3,7 @@ from panda3d.core import Loader, NodePath, Vec3
 from direct.task.Task import TaskManager
 from typing import Callable
 from direct.task import Task
+import sys
 
 class Player(SphereCollideObject):
     def __init__(self, loader: Loader, taskMgr: TaskManager, accept: Callable[[str, Callable], None], modelPath: str, parentNode: NodePath, nodeName: str,
@@ -19,6 +20,9 @@ class Player(SphereCollideObject):
         self.render = parentNode
 
         self.setKeyBindings()
+
+    def quit(self):
+        sys.exit()
 
     def Upwards(self, keyDown):
         if keyDown:
@@ -116,6 +120,7 @@ class Player(SphereCollideObject):
     
     def setKeyBindings(self):
         # key bindings for ship movement
+        self.accept("escape", self.quit)
         self.accept("arrow_up", self.Upwards, [1])
         self.accept("arrow_up-up", self.Upwards, [0])
         self.accept("arrow_down", self.Downwards, [1])
