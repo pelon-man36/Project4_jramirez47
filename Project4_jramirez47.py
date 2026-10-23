@@ -4,7 +4,6 @@ import DefensePaths as defensePaths
 import Player as player
 from panda3d.core import *
 from panda3d.core import CollisionTraverser, CollisionHandlerPusher
-import CollideObjectBase as collideObjectBase
 
 class MyApp(ShowBase):
     def __init__(self):
