@@ -35,7 +35,7 @@ class MyApp(ShowBase):
 
     def setScene(self):
         self.Player = player.Player(self.loader, self.taskMgr, self.accept, "./Assets/Spaceships/ship.obj", self.render,
-            "Player", "./Assets/Spaceships/ship_TEX.tga", (0, 400, 0), (180, 0, 0), 5)
+            "Player", "./Assets/Spaceships/Ship_ship_mat_BaseMap.tga", (0, 400, 0), (180, 0, 0), 5)
 
         self.Universe = spaceJamClasses.Universe(self.loader, "./Assets/Universe/Universe.x", self.render,
             "Universe", "./Assets/Universe/Universe.jpg", (0, 0, 0), 15000)
